@@ -1,0 +1,133 @@
+/* Основные стили */
+.auth-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.auth-title {
+    font-size: 24px;
+    color: #2E7D32;
+    margin: 0;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #2E7D32;
+    outline: none;
+}
+
+.auth-footer {
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+}
+
+.auth-footer a {
+    color: #2E7D32;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.auth-link {
+    display: block;
+    text-align: center;
+    color: #2E7D32;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+.auth-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    background: #D32F2F;
+    color: white;
+    display: none;
+    z-index: 1000;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    font-size: 16px;
+}
+
+.btn--primary {
+    background: #2E7D32;
+    color: white;
+}
+
+.btn--primary:hover {
+    background: #1B5E20;
+}
+
+.btn--block {
+    display: block;
+    width: 100%;
+}
+
+/* Адаптивность */
+@media (max-width: 576px) {
+    .auth-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}
