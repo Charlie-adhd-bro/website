@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Память Урала - Все туры</title>
+
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tours.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.svg" alt="Память Урала" width="50">                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav__link active">Главная</a>
+                    <a href="tours.html" class="nav__link">Туры</a>
+                    <a href="about.html" class="nav__link">О нас</a>
+                    <button class="btn btn--outline" id="logout-btn" onclick="logout()">Выйти</button> 
+                </nav>
+                <div class="header__auth" id="auth-buttons">
+                    <a href="auth.html?redirect=index.html" class="btn btn--outline">Вход</a>
+                    <a href="auth.html?register=true&redirect=index.html" class="btn btn--primary">Регистрация</a>
+                </div>
+                <div class="header__user" id="user-menu" style="display: none;">
+                    <a href="account.html" class="user-avatar"> 
+                        <img src="img/user.svg" alt="Профиль" width="10">
+                    </a>
+                </div>
+                <button class="burger" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+     <main class="tours-page">
+        <div class="container"><br><br><br><br>
+            <h1 class="section-title">Все туры</h1>
+            <h2 class="section-subtitle">Выберите подходящий тур по местам боевой славы Урала</h2>
+            
+            <!-- Фильтры -->
+            <div class="filters-container">
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="filter-date">Дата:</label>
+                        <select id="filter-date" class="filter-select">
+                            <option value="all">Все даты</option>
+                            <option value="soon">Ближайшие</option>
+                            <option value="may">Май 2025</option>
+                            <option value="june">Июнь 2025</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-duration">Длительность:</label>
+                        <select id="filter-duration" class="filter-select">
+                            <option value="all">Любая</option>
+                            <option value="1">1 день</option>
+                            <option value="2">2 дня</option>
+                            <option value="3">3 дня</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="filter-price">Цена:</label>
+                        <select id="filter-price" class="filter-select">
+                            <option value="all">Любая</option>
+                            <option value="5000">До 5 000 ₽</option>
+                            <option value="10000">До 10 000 ₽</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn--outline" id="reset-filters">Сбросить фильтры</button>
+                </div>
+                </br>
+            </div>
+            <div class="discount-info" id="dicount-info">
+                <h6 class = "section-title">Система скидок нашей компании:</h6> 
+                    <p>Пенсионерам и детям до <b>10 лет</b> – скидка <b>2%</b> от <i>базовой стоимости путевки;</i>
+                        <br>для организованных групп численностью <b>10-20 человек</b> – скидка <b>3%;</b> 
+                        <br>для организованных групп школьников численностью более <b>20 человек</b>
+                        – скидка <b>4%</b> + <i>1 сопровождающий</i> – бесплатно.</p>
+            </div>
+            <br>
+            <!-- Контейнер для туров -->
+            <div class="tours-grid" id="tours-container">
+                <!-- Туры будут загружены через JS -->
+            </div>
+        </div>
+    </main>
+
+  <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <p>г. Асбест, ул. Ладыженская, 7</p>
+                    <p>+7 (34365) 3-50-40</p>
+                    <p>info@pamyat-urala.ru</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Режим работы</h3>
+                    <p>Пн-Пт: 9:00 - 18:00</p>
+                    <p>Сб: 10:00 - 15:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Соцсети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><img src="img/vk.svg" alt="ВКонтакте"></a>
+                        <a href="#" class="social-link"><img src="img/tg.svg" alt="Telegram"></a>
+                        <a href="#" class="social-link"><img src="img/yt.svg" alt="YouTube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2025 «Память Урала». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/tours.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthState();
+            protectRoute();
+            
+            // Инициализация туров
+           const toursData = [
+            {
+                id: 1,
+                title: "Дорога памяти",
+                date: "2025-05-15",
+                duration: 2,
+                price: 5200,
+                seats: 12,
+                image: "img/tour-1.jpg",
+                description: `Экскурсия по мемориалам Челябинска и Магнитогорска                                
+                <br><br>(трансфер, проживание включены)
+                <br><b>Доступны скидки</b>`, 
+                places: ["Парк Победы", "Музей военной техники", "Мемориал «Тыл-Фронту»"]
+            },
+            {
+                id: 2,
+                title: "Танкоград",
+                date: "2025-06-22",
+                duration: 1,
+                price: 3800,
+                seats: 5,
+                image: "img/tour-2.jpg",
+                description: `История Челябинска как центра танкостроения
+                <br><b>Доступны скидки</b>`,
+                places: ["ЧТЗ", "Музей ЧТЗ", "Памятник танкистам"]
+            },
+            {
+                id: 3,
+                title: "Уральские рубежи",
+                date: "2025-09-12",
+                duration: 3,
+                price: 8900,
+                seats: 18,
+                image: "img/tour-3.jpg",
+                description: `<br><br>(трансфер, питание, проживание включены)
+                <br><b>Доступны скидки</b>`,
+                places: ["Челябинск", "Златоуст", "Миасс", "Магнитогорск"]
+            }
+        ];
+            
+            // Инициализация фильтров и отрисовка
+            initTours(toursData);
+        });
+    </script>
+</body>
+</html>

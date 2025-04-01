@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Память Урала - Главная</title>
+
+   <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.svg" alt="Память Урала" width="50">                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav__link active">Главная</a>
+                    <a href="tours.html" class="nav__link">Туры</a>
+                    <a href="about.html" class="nav__link">О нас</a>
+                    <button class="btn btn--outline" id="logout-btn" onclick="logout()">Выйти</button> 
+                </nav>
+                <div class="header__auth" id="auth-buttons">
+                    <a href="auth.html?redirect=index.html" class="btn btn--outline">Вход</a>
+                    <a href="auth.html?register=true&redirect=index.html" class="btn btn--primary">Регистрация</a>
+                </div>
+                <div class="header__user" id="user-menu" style="display: none;">
+                    <a href="account.html" class="user-avatar"> 
+                        <img src="img/user.svg" alt="Профиль" width="10">
+                    </a>
+                </div>
+                <button class="burger" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Герой-секция -->
+<section class="hero">
+    <div class="hero-slider">
+            <!-- Слайд 1 -->
+        <div class="hero-slide active" style="background-image: url('img/hero-1.jpg')">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Память Урала</h1>
+                    <p class="hero__subtitle">Путешествия по местам боевой славы Великой Отечественной войны</p>
+                    <a href="tours.html" class="btn btn--primary btn--large">Выбрать тур</a>
+                </div>
+            </div>
+        </div>
+            
+            <!-- Слайд 2 -->
+         <div class="hero-slide" style="background-image: url('img/hero-2.jpg')">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">История подвига</h1>
+                    <p class="hero__subtitle">Узнайте о вкладе Урала в Великую Победу</p>
+                    <a href="tours.html" class="btn btn--primary btn--large">Выбрать тур</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <button class="slide-btn prev-btn">←</button>
+    <button class="slide-btn next-btn">→</button>
+    
+    <!-- Точки-индикаторы -->
+    <div class="slide-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+    </div>
+    </div>
+</section>
+
+        <!-- Блок преимуществ -->
+        <section class="advantages">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают нас</h2>
+                <div class="advantages__grid">
+                    <div class="advantage-card">
+                        <img src="img/guide.svg" alt="гид">
+                        <h3 class="advantage-card__title">Профессиональные гиды</h3>
+
+                        <p class="advantage-card__text">Историки и краеведы с большим опытом</p>
+                    </div>
+                    <div class="advantage-card">
+                        <img src="img/transfer.svg" alt="проживание">
+                        <h3 class="advantage-card__title">Комфортные условия</h3>
+                        <p class="advantage-card__text">Трансфер, питание и проживание включены</p>
+                    </div>
+                    <div class="advantage-card">
+                        <img src="img/discount.svg" alt="скидка">
+                       <h3 class="advantage-card__title">Гибкая система скидок</h3>
+                        <p class="advantage-card__text">Для пенсионеров, детей и организованных групп</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярные туры -->
+        <section class="popular-tours">
+            <div class="container">
+                <h2 class="section-title">Популярные туры</h2>
+                <div class="tours-grid">
+                    <!-- Тур 1 -->
+                    <div class="tour-card">
+                        <div class="tour-card__image">
+                            <img src="img/tour-1.jpg" alt="Тур Дорога памяти" loading="lazy">
+                            <span class="tour-card__badge">Есть места</span>                        </div>
+                        <div class="tour-card__content">
+                            <h3 class="tour-card__title">"Дорога памяти"</h3>
+                            <div class="tour-card__meta">
+                                <span class="tour-card__date">15.05.2025</span>
+                                <span class="tour-card__duration">2 дня</span>
+                            </div>
+                            <p class="tour-card__desc">Экскурсия по мемориалам Челябинска и Магнитогорска
+                                <br><br>(трансфер, проживание включены)
+                                <br><b>Доступны скидки</b>
+                            </p>
+                            <div class="tour-card__footer">
+                                <span class="tour-card__price">от 5 200 ₽ </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Тур 2 -->
+                    <div class="tour-card">
+                        <div class="tour-card__image">
+                            <img src="img/tour-2.jpg" alt="Танкоград" loading="lazy">
+                            <span class="tour-card__badge">Мало мест</span>
+                        </div>
+                        <div class="tour-card__content">
+                            <h3 class="tour-card__title">"Танкоград"</h3>
+                            <div class="tour-card__meta">
+                                <span class="tour-card__date">22.06.2025</span>
+                                <span class="tour-card__duration">1 день</span>
+                            </div>
+                            <p class="tour-card__desc">История Челябинска как центра танкостроения
+                                <br><b>Доступны скидки</b>
+                            </p>
+                            <div class="tour-card__footer">
+                                <span class="tour-card__price">от 3 800 ₽</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Тур 3 -->
+                    <div class="tour-card">
+                        <div class="tour-card__image">
+                            <img src="img/tour-3.jpg" alt="Уральский добровольческий" loading="lazy">
+                            <span class="tour-card__badge">Есть места</span>
+                        </div>
+                        <div class="tour-card__content">
+                            <h3 class="tour-card__title">"Уральский добровольческий"</h3>
+                            <div class="tour-card__meta">
+                                <span class="tour-card__date">09.05.2025</span>
+                                <span class="tour-card__duration">3 дня</span>
+                            </div>
+                            <p class="tour-card__desc">Маршрут по местам формирования добровольческих корпусов
+                                <br><br>(трансфер, питание, проживание включены)
+                                <br><b>Доступны скидки</b>
+                            </p>
+                            <div class="tour-card__footer">
+                                <span class="tour-card__price">от 7 500 ₽</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="tours.html" class="btn btn--outline">Выбрать тур</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                                       <h3 class="footer__title">Контакты</h3>
+                    <p>г. Асбест, ул. Ладыженская, 7</p>
+                    <p>+7 (34365) 3-50-40</p>
+                    <p>info@pamyat-urala.ru</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Режим работы</h3>
+                    <p>Пн-Пт: 9:00 - 18:00</p>
+                    <p>Сб: 10:00 - 15:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Соцсети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><img src="img/vk.svg" alt="ВКонтакте"></a>
+                        <a href="#" class="social-link"><img src="img/tg.svg" alt="Telegram"></a>
+                        <a href="#" class="social-link"><img src="img/yt.svg" alt="YouTube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2025 «Память Урала». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/slider.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        // Проверка авторизации при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthState();
+            
+            // Инициализация слайдера
+            const heroSlider = new Swiper('.hero-slider', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
+</body>
+</html>
