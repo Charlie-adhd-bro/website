@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Память Урала - Главная</title>
+
+   <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.svg" alt="Память Урала" width="50">                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav__link active">Главная</a>
+                    <a href="tours.html" class="nav__link">Туры</a>
+                    <a href="about.html" class="nav__link">О нас</a>
+                    <button class="btn btn--outline" id="logout-btn" onclick="logout()">Выйти</button> 
+                </nav>
+                <div class="header__auth" id="auth-buttons">
+                    <a href="auth.html?redirect=index.html" class="btn btn--outline">Вход</a>
+                    <a href="auth.html?register=true&redirect=index.html" class="btn btn--primary">Регистрация</a>
+                </div>
+                <div class="header__user" id="user-menu" style="display: none;">
+                    <a href="account.html" class="user-avatar"> 
+                        <img src="img/user.svg" alt="Профиль" width="10">
+                    </a>
+                </div>
+                <button class="burger" id="burger-bth">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="about-page">
+
+        <section class="about-content">
+            <div class="container">
+                <div class="about-block">
+                    <div class="about-text">
+                        <h2 class="about-title text-center">Наша миссия</h2>
+                        <p>Туристическая фирма «Память Урала» создана с целью сохранения и передачи исторической памяти о вкладе Урала в победу в Великой Отечественной войне.</p>
+                        <p>Мы организуем экскурсии по памятным местам, связанным с героическим прошлым нашего региона, чтобы современные поколения могли прикоснуться к истории и понять цену победы.</p>
+                    </div>
+                   
+                </div>
+
+                <div class="about-block reverse">
+                    <div class="about-text">
+                        <h2 class="about-title text-center">Наша команда</h2>
+                        <p>В нашей команде работают профессиональные историки, краеведы и экскурсоводы с многолетним опытом. Каждый из них глубоко знает тему и умеет интересно подать материал.</p>
+                        <p>Мы тщательно разрабатываем каждый маршрут, чтобы сделать его не только познавательным, но и комфортным для наших гостей.</p>
+                    </div>
+                    </div>
+
+                <div class="about-values">
+                    <h2 class="about-title text-center">Наши ценности</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            
+                            <h3>Историческая достоверность</h3>
+                            <p>Все наши экскурсии основаны на документально подтвержденных фактах</p>
+                        </div>
+                        <div class="value-card">
+                            
+                            <h3>Уважение к памяти</h3>
+                            <p>Мы бережно относимся к историческим местам и памяти героев</p>
+                        </div>
+                        <div class="value-card">
+                            
+                            <h3>Комфорт для гостей</h3>
+                            <p>Мы заботимся о вашем удобстве во время экскурсий</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал --->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <p>г. Асбест, ул. Ладыженская, 7</p>
+                    <p>+7 (34365) 3-50-40</p>
+                    <p>info@pamyat-urala.ru</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Режим работы</h3>
+                    <p>Пн-Пт: 9:00 - 18:00</p>
+                    <p>Сб: 10:00 - 15:00</p>
+                    <p>Вс: выходной</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Соцсети</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><img src="img/vk.svg" alt="ВКонтакте"></a>
+                        <a href="#" class="social-link"><img src="img/tg.svg" alt="Telegram"></a>
+                        <a href="#" class="social-link"><img src="img/yt.svg" alt="YouTube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2025 «Память Урала». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Проверка авторизации при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAuthState();
+            
+            // Инициализация слайдера
+            const heroSlider = new Swiper('.hero-slider', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
+    <script src="js/app.js"></script>
+</body>
+</html>

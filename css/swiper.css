@@ -1,0 +1,50 @@
+/* Стили для слайдера туров */
+.tours-swiper {
+    padding: 20px 0;
+    position: relative;
+}
+
+.tours-swiper .swiper-slide {
+    height: auto;
+    display: flex;
+}
+
+.tours-swiper .tour-card {
+    height: 100%;
+}
+
+/* Навигация слайдера */
+.tours-swiper .swiper-button-prev,
+.tours-swiper .swiper-button-next {
+    color: var(--primary);
+    width: 40px;
+    height: 40px;
+    background: var(--light);
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tours-swiper .swiper-button-prev::after,
+.tours-swiper .swiper-button-next::after {
+    font-size: 20px;
+}
+
+.tours-swiper .swiper-pagination-bullet {
+    background: var(--gray);
+    opacity: 1;
+}
+
+.tours-swiper .swiper-pagination-bullet-active {
+    background: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .tours-swiper {
+        padding: 20px 10px;
+    }
+    
+    .tours-swiper .swiper-button-prev,
+    .tours-swiper .swiper-button-next {
+        display: none;
+    }
+}

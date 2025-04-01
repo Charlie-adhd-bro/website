@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация | Память Урала</title>
+
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-header">
+            <a href="index.html" class="auth-logo">
+                <img src="img/logo.svg" alt="Память Урала" width="50">            </a>
+            <h1 class="auth-title" id="auth-title">Вход в аккаунт</h1>
+        </div>
+
+        <!-- Форма входа -->
+        <form id="login-form" class="auth-form active">
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" required placeholder="Ваш email">
+            </div>
+            
+            <div class="form-group">
+                <label for="login-password">Пароль</label>
+                <input type="password" id="login-password" required placeholder="Ваш пароль">
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">Войти</button>
+            <div class="auth-footer">
+                <span>Нет аккаунта?</span>
+                <a href="#" id="switch-to-register">Зарегистрироваться</a>
+            </div>
+            <a href="#" class="auth-link" id="forgot-password">Забыли пароль?</a>
+        </form>
+
+        <!-- Форма регистрации -->
+        <form id="register-form" class="auth-form">
+            <div class="form-group">
+                <label for="reg-name">ФИО (только русские буквы)</label>
+                <input type="text" id="reg-name" required placeholder="Иванов Иван Иванович">
+                <div id="errmess" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="reg-email">Email</label>
+                <input type="email" id="reg-email" required placeholder="example@mail.ru">
+            </div>
+            <div class="form-group">
+                <label for="passport">Серия и номер паспорта</label>
+                <input type="text" id="passport" required placeholder="00-00 000000" maxlength="12">
+                <div id="error-message" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="reg-phone">Телефон</label>
+                <input type="tel" id="reg-phone" required placeholder="+7 900 123-45-67">
+                <div id="messerr" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="reg-password">Пароль (не менее 6 символов)</label>
+                <input type="password" id="reg-password" minlength="6" required placeholder="">
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">Зарегистрироваться</button>
+            <div class="auth-footer">
+                <span>Уже есть аккаунт?</span>
+                <a href="#" id="switch-to-login">Войти</a>
+            </div>
+        </form>
+
+        <!-- Форма восстановления -->
+        <form id="reset-form" class="auth-form">
+            <p class="auth-info">Введите email, указанный при регистрации</p>
+            <div class="form-group">
+                <label for="reset-email">Email</label>
+                <input type="email" id="reset-email" required placeholder="example@mail.ru">
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">Восстановить пароль</button>
+            <a href="#" class="auth-link" id="back-to-login">Назад к входу</a>
+        </form>
+
+        <!-- Уведомления -->
+        <div id="auth-alert" class="auth-alert"></div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

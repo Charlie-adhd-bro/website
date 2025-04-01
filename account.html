@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет | Память Урала</title>
+
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/account.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Шапка -->
+<header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">
+                    <img src="img/logo.svg" alt="Память Урала" width="50">                </a>
+                <nav class="nav">
+                    <a href="index.html" class="nav__link active">Главная</a>
+                    <a href="tours.html" class="nav__link">Туры</a>
+                    <a href="about.html" class="nav__link">О нас</a>
+                    <button class="btn btn--outline" id="logout-btn" onclick="logout()">Выйти</button> 
+                </nav>
+                <div class="header__auth" id="auth-buttons">
+                    <a href="auth.html?redirect=index.html" class="btn btn--outline">Вход</a>
+                    <a href="auth.html?register=true&redirect=index.html" class="btn btn--primary">Регистрация</a>
+                </div>
+                <div class="header__user" id="user-menu" style="display: none;">
+                    <a href="account.html" class="user-avatar"> 
+                        <img src="img/user.svg" alt="Профиль" width="10">
+                    </a>
+                    
+                </div>
+                <button class="burger" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+<main class="account-page" id="account-container">
+    <div class="account-section active" id="bookings-section">
+        <br><br><br><br>
+        <h2 class="account-section-title">Мои бронирования</h2>
+        <div class="bookings-list" id="bookings-list">
+            <!-- Контент будет загружен через JS после проверки авторизации -->
+            <div class="account-loading">
+                <div class="loader"></div>
+                <p>Загрузка данных аккаунта...</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Подвал -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+            <div class="footer__col">
+                <h3 class="footer__title">Контакты</h3>
+                <p>г. Асбест, ул. Ладыженская, 7</p>
+                <p>+7 (34365) 3-50-40</p>
+                <p>info@pamyat-urala.ru</p>
+            </div>
+            <div class="footer__col">
+                <h3 class="footer__title">Режим работы</h3>
+                <p>Пн-Пт: 9:00 - 18:00</p>
+                <p>Сб: 10:00 - 15:00</p>
+                <p>Вс: выходной</p>
+            </div>
+            <div class="footer__col">
+                <h3 class="footer__title">Соцсети</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><img src="img/vk.svg" alt="ВКонтакте"></a>
+                    <a href="#" class="social-link"><img src="img/tg.svg" alt="Telegram"></a>
+                    <a href="#" class="social-link"><img src="img/yt.svg" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>© 2025 «Память Урала». Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/account.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
